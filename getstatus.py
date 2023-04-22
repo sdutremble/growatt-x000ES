@@ -5,7 +5,8 @@ import datetime
 import os
 import sys
 from pymodbus.exceptions import ModbusIOException
-from pymodbus.client.sync import ModbusSerialClient as ModbusClient
+from pymodbus.client import ModbusSerialClient as ModbusClient
+#from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 from influxdb import InfluxDBClient
 
 influxhost = "127.0.0.1"
