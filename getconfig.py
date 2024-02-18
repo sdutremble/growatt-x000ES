@@ -84,7 +84,7 @@ class Growatt:
             "BulkChargeVolt": float(row.registers[35]) / 10,            # .1v 500-580
             "FloatChargeVolt": float(row.registers[36]) / 10,           # .1v 500-560
             "BatLowtoUtiVolt": float(row.registers[37]) / 10,           # .1v 444-514
-            "FloatChargeCurr": float(row.registers[38]) / 10,           #.1a 0-80
+            "FloatChargeCurr": float(row.registers[38]) / 10,           # .1a 0-80
             "BatteryType": row.registers[39],                           # 0 lead acid, 1 lithium, 2 customLead
             "Aging Mode": row.registers[40],                            # 0 normal, 1 aging mode
             "DTC": row.registers[43],                                   # &*6
