@@ -67,9 +67,9 @@ class Growatt:
         row = self.client.read_input_registers(0, 83, unit=self.unit)
         if gwverbose: print("GWVERBOSE2")
         if gwverbose: print("GWVERBOSE3")
-        info = {                                    # ==================================================================
+        info = {                                                # ==================================================================
             "Module": unit,
-            "StatusCode": row.registers[0],         # N/A,      Inverter Status,    Inverter run state
+            "StatusCode": row.registers[0],                     # N/A,      Inverter Status,    Inverter run state
             "Status": StatusCodes[row.registers[0]],
             "Vpv1": float(row.registers[1]) / 10,               # 0.1V,     PV1 voltage
             "Vpv2": float(row.registers[2]) / 10,               # 0.1V,     PV2 voltage
@@ -98,8 +98,8 @@ class Growatt:
             "InvTemp": float(row.registers[25]) / 10,           # 0.1C      Inverter Temp
             "DCDCTemp": float(row.registers[26]) / 10,          # 0.1C      DCDC Temp
             "LoadPercent": float(row.registers[27]) / 10,       # 0.1%      Inverter Load Percent
-            "Bat_dspp_V": float(row.registers[28]) / 100,         # 0.01V     Battery-port volt (DSP)
-            "Bat_dspb_V": float(row.registers[29]) / 100,         # 0.01V     Battery-bus voltage (DSP)
+            "Bat_dspp_V": float(row.registers[28]) / 100,       # 0.01V     Battery-port volt (DSP)
+            "Bat_dspb_V": float(row.registers[29]) / 100,       # 0.01V     Battery-bus voltage (DSP)
             "TimeTotalH": float(row.registers[30]) / 2,         # 0.5S,     Time total H,       Work time total (high)
             "TimeTotalL": float(row.registers[31]) / 2,         # 0.5S,     Time total L,       Work time total (low)
             "Buck1Temp": float(row.registers[32]) / 10,         # 0.1C,     Temperature,        Inverter temperature
@@ -117,7 +117,7 @@ class Growatt:
             "DTC": float(row.registers[44]),                    #
             "CheckStep": float(row.registers[45]),              #
             "ProductionLM": float(row.registers[46]),           #
-            "ConstPOKF": float(row.registers[47]),                # Constant power ok flag (0 no, 1 OK)
+            "ConstPOKF": float(row.registers[47]),              # Constant power ok flag (0 no, 1 OK)
             "Epv1_todayH": float(row.registers[48]) / 10,       # 0.1kWh,   Energy today H,     Today generate energy (high)
             "Epv1_todayL": float(row.registers[49]) / 10,       # 0.1kWh,   Energy today l,     Today generate energy (low)
             "Epv1_totalH": float(row.registers[50]) / 10,       # 0.1kWh,   Energy total H,     generate energy total (high)
