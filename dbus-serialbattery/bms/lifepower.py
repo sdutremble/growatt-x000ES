@@ -1,13 +1,12 @@
-import serial
-ser = serial.Serial("COM7", 9600)
-   
-# Send character 'S' to start the program
-ser.write(bytearray('S','ascii'))
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, division, print_function, unicode_literals
+from battery import Battery, Cell
+from utils import read_serial_data, logger
+import utils
+from struct import unpack_from
+import re
+import sys
 
-# Read line   
-while True:
-bs = ser.readline()
-print(bs)
 
 class Lifepower(Battery):
     def __init__(self, port, baud, address):
